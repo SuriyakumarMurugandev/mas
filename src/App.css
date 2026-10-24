@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ant-form-item-label > label {
+  color: #696969 !important;
 }
 
 .App-logo {
