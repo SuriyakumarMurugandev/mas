@@ -9,7 +9,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 const Layout = lazy(() => import("../components/Layout/Layout.jsx"));
 const Login = lazy(() => import("../components/Login.jsx"));
 const PublicHomePage = lazy(() => import("../components/PublicHomePage.jsx"));
-const Signup = lazy(() => import("../components/SignUp.jsx"));
+const Signup = lazy(() => import("../components/NewSignUp.jsx"));
+// const Signup = lazy(() => import("../components/SignUp.jsx"));
 const ForgotPasswordFlow = lazy(() => import("../components/ForgotPass/ForgotPasswordFlow.jsx"));
 
 const AppRouter = () => {

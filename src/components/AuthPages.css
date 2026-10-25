@@ -155,3 +155,54 @@
 @media (prefers-reduced-motion: reduce) {
   .fade-in-up, .business-type-card.ant-card, .auth-submit.ant-btn { animation: none !important; transition: none !important; }
 }
+
+
+/* For Signup */
+
+.signup-content-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.signup-business-list,
+.signup-full-width {
+  width: 100%;
+}
+
+.signup-field-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.signup-branch-card {
+  background: #fafbfc;
+}
+
+.signup-business-list .ant-card-head-title {
+  white-space: normal;
+}
+
+.signup-form-card > .ant-card-body > .ant-steps {
+  margin-bottom: 8px;
+}
+
+.signup-form-card .ant-steps-item-title {
+  font-size: 13px;
+}
+
+@media (max-width: 576px) {
+  .signup-form-card {
+    width: 100%;
+  }
+
+  .signup-form-card .ant-card-body {
+    padding: 18px;
+  }
+
+  .signup-form-card .ant-steps-item-title {
+    font-size: 11px;
+  }
+}

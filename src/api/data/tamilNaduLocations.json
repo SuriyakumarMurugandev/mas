@@ -1,0 +1,55 @@
+{
+  "Tamil Nadu": {
+    "Coimbatore": [
+      "Coimbatore North",
+      "Coimbatore South",
+      "Pollachi",
+      "Sulur",
+      "Mettupalayam",
+      "Annur",
+      "Madukkarai",
+      "Perur",
+      "Valparai"
+    ],
+    "Chennai": [
+      "Ambattur",
+      "Alandur",
+      "Egmore",
+      "Guindy",
+      "Madhavaram",
+      "Mylapore",
+      "Perambur",
+      "Sholinganallur",
+      "Tondiarpet"
+    ],
+    "Madurai": [
+      "Madurai North",
+      "Madurai South",
+      "Melur",
+      "Peraiyur",
+      "Thirumangalam",
+      "Usilampatti",
+      "Vadipatti"
+    ],
+    "Tiruppur": [
+      "Avinashi",
+      "Dharapuram",
+      "Kangeyam",
+      "Madathukulam",
+      "Palladam",
+      "Tiruppur North",
+      "Tiruppur South",
+      "Udumalaipettai"
+    ],
+    "Salem": [
+      "Salem",
+      "Attur",
+      "Edappadi",
+      "Gangavalli",
+      "Mettur",
+      "Omalur",
+      "Sankari",
+      "Yercaud"
+    ]
+  }
+}
