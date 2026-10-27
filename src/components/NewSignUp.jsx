@@ -363,6 +363,8 @@ const handleSubmit = async () => {
   }
 };
 
+
+
   return (
     <main
       className="auth-page signup-page"

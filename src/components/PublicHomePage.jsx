@@ -21,6 +21,7 @@ import {
 } from '@ant-design/icons';
 import { Button, Drawer, Input, Tag } from 'antd';
 import './PublicHomePage.css'
+import { useNavigate } from 'react-router-dom';
 
 const features = [
   {
@@ -62,6 +63,19 @@ const businessItems = [
 ];
 
 function DashboardPreview() {
+
+  useEffect(() => {
+    clearAuthStorage()
+  }, []);
+
+  const clearAuthStorage = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    localStorage.removeItem("subscription");
+    localStorage.removeItem("branches");
+    localStorage.removeItem("activeBranch");
+  };
+
   return (
     <div className="dashboard-wrap" aria-label="Illustrative business dashboard preview">
       <div className="orbit orbit-one" />
@@ -127,6 +141,9 @@ function DashboardPreview() {
 }
 
 function App() {
+
+  const navigate = useNavigate();
+
   useEffect(() => {
     const root = document.querySelector('.site-shell');
     if (!root || !('IntersectionObserver' in window)) return;
@@ -150,10 +167,11 @@ function App() {
   const [company, setCompany] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const openSignup = () => {
-    setSignupOpen(true);
-    setDrawerOpen(false);
-    setSubmitted(false);
+  const openSignup = (route) => {
+    // setSignupOpen(true);
+    // setDrawerOpen(false);
+    // setSubmitted(false);
+    navigate(`/${route}`)
   };
 
   const submitSignup = (event) => {
@@ -178,8 +196,8 @@ function App() {
         </a>
         <nav className="desktop-nav">{navLinks}</nav>
         <div className="header-actions">
-          <button className="login-link" onClick={openSignup}>Log in</button>
-          <Button type="primary" className="header-cta" onClick={openSignup}>Get started <ArrowRightOutlined /></Button>
+          <button className="login-link" onClick={()=>openSignup('login')}>Log in</button>
+          <Button type="primary" className="header-cta" onClick={()=>openSignup('signup')}>Get started <ArrowRightOutlined /></Button>
         </div>
         <button className="mobile-menu" aria-label="Open navigation" onClick={() => setDrawerOpen(true)}><MenuOutlined /></button>
       </header>
@@ -191,7 +209,7 @@ function App() {
         onClose={() => setDrawerOpen(false)}
         closeIcon={<CloseOutlined />}
       >
-        <nav className="mobile-nav">{navLinks}<Button type="primary" block onClick={openSignup}>Get started <ArrowRightOutlined /></Button></nav>
+        <nav className="mobile-nav">{navLinks}<Button type="primary" block onClick={()=>openSignup('signup')}>Get started <ArrowRightOutlined /></Button></nav>
       </Drawer>
 
       <main>
@@ -202,7 +220,7 @@ function App() {
             <p className="hero-subtitle">Medical stores, hotels, restaurants, supermarkets — all in one place.</p>
             <p className="hero-description">Bring your businesses, branches and people together with one clear, connected management experience.</p>
             <div className="hero-actions">
-              <Button type="primary" size="large" className="hero-cta" onClick={openSignup}>Get Started <ArrowRightOutlined /></Button>
+              <Button type="primary" size="large" className="hero-cta" onClick={()=>openSignup('signup')}>Get Started <ArrowRightOutlined /></Button>
               <a className="text-link" href="#features">Explore features <span className="link-arrow">↓</span></a>
             </div>
             <div className="trust-row">
@@ -256,7 +274,7 @@ function App() {
                 <li><CheckCircleFilled /> Give each team the access they need</li>
                 <li><CheckCircleFilled /> Keep workflows clear as you grow</li>
               </ul>
-              <Button type="primary" size="large" className="workflow-cta" onClick={openSignup}>Build your workspace <ArrowRightOutlined /></Button>
+              <Button type="primary" size="large" className="workflow-cta" onClick={()=>openSignup('signup')}>Build your workspace <ArrowRightOutlined /></Button>
             </div>
             <div className="workflow-visual">
               <div className="workflow-glow" />
@@ -282,7 +300,7 @@ function App() {
               <div className="eyebrow cta-eyebrow"><span className="eyebrow-dot" /> YOUR NEXT CHAPTER STARTS HERE</div>
               <h2>Ready to bring it<br />all together?</h2>
               <p>One portal. Your businesses. A clearer way forward.</p>
-              <Button size="large" className="cta-button" onClick={openSignup}>Get Started <ArrowRightOutlined /></Button>
+              <Button size="large" className="cta-button" onClick={()=>openSignup('signup')}>Get Started <ArrowRightOutlined /></Button>
             </div>
             <div className="cta-mark"><span className="cta-mark-ring ring-a" /><span className="cta-mark-ring ring-b" /><span className="cta-mark-core"><AppstoreOutlined /></span><span className="cta-star star-a">✳</span><span className="cta-star star-b">✦</span></div>
           </div>
@@ -293,7 +311,7 @@ function App() {
         <div className="section-container footer-main">
           <a className="brand footer-brand" href="#home"><span className="brand-mark"><AppstoreOutlined /></span><span className="brand-name">oneorbit<span>.</span></span></a>
           <p className="footer-tagline">Empowering businesses with technology.</p>
-          <div className="footer-links"><a href="#features">Features</a><a href="#how-it-works">How it works</a><button onClick={openSignup}>Get started</button></div>
+          <div className="footer-links"><a href="#features">Features</a><a href="#how-it-works">How it works</a><button onClick={()=>openSignup('signup')}>Get started</button></div>
         </div>
         <div className="section-container footer-bottom"><span>© 2026 OneOrbit. All rights reserved.</span><span className="footer-made">Designed for the people who build businesses <span>✳</span></span></div>
       </footer>
